@@ -3,6 +3,7 @@ set -ex
 export DEBIAN_FRONTEND=noninteractive
 apt-get update && apt-get install -y tzdata libpq-dev
 brew install postgres
+echo $(brew --prefix)
 brew services start postgres 
 gem install bundler -v 2.0.1
 # install
