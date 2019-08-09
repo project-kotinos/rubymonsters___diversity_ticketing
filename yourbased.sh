@@ -4,7 +4,7 @@ export DEBIAN_FRONTEND=noninteractive
 apt-get update && apt-get install -y tzdata libpq-dev
 brew install postgres
 echo $(brew --prefix)
-pg_ctl -D $(brew --prefix)/var/postgres start
+su - postgres -c 'pg_ctl -D $(brew --prefix)/var/postgres start'
 gem install bundler -v 2.0.1
 # install
 bundle install --without development production
